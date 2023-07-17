@@ -1,4 +1,3 @@
-import JobsTable from "./JobsTable";
 import { useEffect, useState } from "react";
 
 const AddJob = () => {
@@ -17,14 +16,14 @@ const AddJob = () => {
   const [jobs, setJobs] = useState([]);
   const [editId, setEditId] = useState(null);
 
-  //useEffect(() => {
-  // const newJob = JSON.parse(localStorage.getItem("jobs")) || [];
-  // setJobs(newJob);
-  //  }, []);
+  useEffect(() => {
+    const newJob = JSON.parse(localStorage.getItem("jobs")) || [];
+    setJobs(newJob);
+  }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem("jobs", JSON.stringify(jobs));
-  //}, [jobs]);
+  useEffect(() => {
+    localStorage.setItem("jobs", JSON.stringify(jobs));
+  }, [jobs]);
 
   const addJobForm = (e) => {
     e.preventDefault();
@@ -161,14 +160,14 @@ const AddJob = () => {
             >
               <option value="Select Location">Select Location</option>
               <option value="Gauteng">Gauteng</option>
-              <option value="Gauteng">Mpumalanga</option>
-              <option value="Gauteng">North West</option>
-              <option value="Gauteng">Limpopo</option>
-              <option value="Gauteng">Western Cape</option>
-              <option value="Gauteng">Northern Cape</option>
-              <option value="Gauteng">Free State</option>
-              <option value="Gauteng">Eastern cape</option>
-              <option value="Gauteng">Kwazulu-Natal</option>
+              <option value="Mpumalanga">Mpumalanga</option>
+              <option value="North West">North West</option>
+              <option value="Limpopo">Limpopo</option>
+              <option value="Western Cape">Western Cape</option>
+              <option value="Northern Cape">Northern Cape</option>
+              <option value="Free State">Free State</option>
+              <option value="Eastern cape">Eastern cape</option>
+              <option value="Kwazulu-Natal">Kwazulu-Natal</option>
             </select>
           </div>
           <div className="text-lg mt-10 px-6">
@@ -288,20 +287,6 @@ const AddJob = () => {
               className="border-100 rounded-xl px-6 py-2 bg-gray-100 block w-full "
             />
           </div>
-          <div className="text-lg mt-10 px-6">
-            <label htmlFor="icon" className="font-bold">
-              Upload Company Icon
-            </label>
-            <input
-              type="file"
-              id="icon"
-              accept="image/*"
-              name="icon"
-              onChange={(e) => setIcon(e.target.files[0])}
-              // ref={fileInputRef}
-            />
-          </div>
-
           <div className="flex justify-center m-12">
             <button
               type="submit"
@@ -312,110 +297,79 @@ const AddJob = () => {
           </div>
         </form>
       </div>
+      <div className="mt-20">
+        <div className="">
+          <table className="w-full text-left">
+            <thead className="">
+              <tr className="">
+                <th className="text-base bg-light-purple py-5 px-3"></th>
+                <th className="text-base bg-light-purple py-5 px-3">
+                  Position
+                </th>
+                <th className="text-base bg-light-purple py-5 px-3">company</th>
+                <th className="text-base bg-light-purple py-5 px-3">
+                  Location
+                </th>
+                <th className="text-base bg-light-purple py-5 px-3">
+                  About Company
+                </th>
+                <th className="text-base bg-light-purple py-5 px-3">
+                  Description
+                </th>
+                <th className="text-base bg-light-purple py-5 px-3">
+                  Requirements
+                </th>
+                <th className="text-base bg-light-purple py-5 px-3">Type</th>
+                <th className="text-base bg-light-purple py-5 px-3">
+                  Industry
+                </th>
+                <th className="text-base bg-light-purple py-5 px-3">Salary</th>
+                <th className="text-base bg-light-purple  py-5 px-3">Date</th>
+                <th className="text-base bg-light-purple py-5 px-3">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {jobs.map((t) => (
+                <tr key={t.id} className="bg-white dark:border-gray py-5">
+                  <td className="py-5 px-3">
+                    <img
+                      src={t.icon}
+                      alt="Company Icon"
+                      className="w-10 h-10"
+                    />
+                  </td>
+                  <td className="py-5 px-3">{t.jobtitle}</td>
+                  <td className="py-5 px-3 ">{t.company}</td>
+                  <td className="py-5 px-3 ">{t.location}</td>
+                  <td className="py-5 px-3 ">{t.about}</td>
+                  <td className="py-5 px-3 ">{t.description}</td>
+                  <td className="py-5 px-3 ">{t.requirements}</td>
+                  <td className="py-5 px-3 ">{t.type}</td>
+                  <td className="py-5 px-3 ">{t.salary}</td>
+                  <td className="py-5 px-3 ">{t.date}</td>
+                  <td className="py-5 px-3 ">
+                    <button
+                      className="border bg-light-purple px-2"
+                      onClick={(e) => handleEdit(t)}
+                      type="button"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="border bg-light-purple px-2"
+                      onClick={(e) => handleDelete(t.id)}
+                      type="button"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
   );
 };
 export default AddJob;
-
-/*<div className="mt-20">
-  <div className="">
-    <table className="w-full text-left">
-      <thead className="">
-        <tr className="">
-          <th className="text-base bg-light-purple py-5 px-3"></th>
-          <th className="text-base bg-light-purple py-5 px-3">Position</th>
-          <th className="text-base bg-light-purple py-5 px-3">company</th>
-          <th className="text-base bg-light-purple py-5 px-3">Location</th>
-          <th className="text-base bg-light-purple py-5 px-3">About Company</th>
-          <th className="text-base bg-light-purple py-5 px-3">Description</th>
-          <th className="text-base bg-light-purple py-5 px-3">Requirements</th>
-          <th className="text-base bg-light-purple py-5 px-3">Type</th>
-          <th className="text-base bg-light-purple py-5 px-3">Industry</th>
-          <th className="text-base bg-light-purple py-5 px-3">Salary</th>
-          <th className="text-base bg-light-purple  py-5 px-3">Date</th>
-          <th className="text-base bg-light-purple py-5 px-3">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {jobs.map((t) => (
-          <tr key={t.id} className="bg-white dark:border-gray py-5">
-            <td className="py-5 px-3">
-              <img src={t.icon} alt="Company Icon" className="w-10 h-10" />
-            </td>
-            <td className="py-5 px-3">{t.jobtitle}</td>
-            <td className="py-5 px-3 ">{t.company}</td>
-            <td className="py-5 px-3 ">{t.location}</td>
-            <td className="py-5 px-3 ">{t.about}</td>
-            <td className="py-5 px-3 ">{t.description}</td>
-            <td className="py-5 px-3 ">{t.requirements}</td>
-            <td className="py-5 px-3 ">{t.type}</td>
-            <td className="py-5 px-3 ">{t.salary}</td>
-            <td className="py-5 px-3 ">{t.date}</td>
-            <td className="py-5 px-3 ">
-              <button
-                className="border bg-light-purple px-2"
-                onClick={(e) => handleEdit(t)}
-                type="button"
-              >
-                Edit
-              </button>
-              <button
-                className="border bg-light-purple px-2"
-                onClick={(e) => handleDelete(t.id)}
-                type="button"
-              >
-                Delete
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-</div>;*/
-
-/*<p className="mb-4 text-lg">
-              <label className="font-bold mr-4">location</label>
-              <select className="border rounded-xl px-8 py-2">
-                <option value="Select Location">Select Location</option>
-                <option value="Gauteng">Gauteng</option>
-                <option value="Gauteng">Mpumalanga</option>
-                <option value="Gauteng">North West</option>
-                <option value="Gauteng">Limpopo</option>
-                <option value="Gauteng">Western Cape</option>
-                <option value="Gauteng">Northern Cape</option>
-                <option value="Gauteng">Free State</option>
-                <option value="Gauteng">Eastern cape</option>
-                <option value="Gauteng">Kwazulu-Natal</option>
-              </select>
-            </p>
-            <p className="font-bold text-lg mt-4">
-              <label className="mr-4">Job description</label>
-              <input className="border rounded-xl py-20 px-40" />
-            </p>
-            <p className="mt-4 text-lg">
-              <label className="font-bold mr-4">Type:</label>
-              <input type="radio" className="" />
-              Full Time
-              <input type="radio" className="ml-4" />
-              Part Time
-              <input type="radio" className="ml-4" />
-              Fixed
-            </p>
-            <p className="mt-4 text-lg">
-              <label className="font-bold mr-4">Salary</label>
-              <input type="number" className="border rounded-xl px-8 py-2 " />
-            </p>
-            <p className="mt-4 text-lg">
-              <label className="font-bold mr-4">Closing Date</label>
-              <input type="date" className="border rounded-xl px-6 py-2" />
-            </p>
-            <p className="mt-4 mb-8 text-lg">
-              <label className="font-bold mr-4">Upload Company Icon</label>
-              <input type="file" id="icon" accept="image/*" name="icon" />
-            </p>
-
-// const handleChange = (e) => {
-//   e.preventDefault();
-// console.log(e.target.value);
-// };*/

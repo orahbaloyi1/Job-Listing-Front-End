@@ -12,11 +12,6 @@ const NavBar = () => {
         <nav className="flex gap-6">
           <ul className="flex gap-x-8 font-bold text-white items-center">
             <li>
-              <Link to="/AboutUs" className="hover:underline cursor-pointer">
-                About Us
-              </Link>
-            </li>
-            <li>
               <Link to="/AllJobs" className="hover:underline cursor-pointer">
                 Jobs
               </Link>

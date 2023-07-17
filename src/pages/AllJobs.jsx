@@ -1,11 +1,11 @@
 import FeaturedJobs from "../components/FeaturedJobs";
 import MainLayout from "../layouts/MainLayouts";
 
-/*const AllJobs = () => {
+const AllJobs = () => {
   return (
     <MainLayout>
       <FeaturedJobs />
     </MainLayout>
   );
 };
-export default AllJobs;*/
+export default AllJobs;

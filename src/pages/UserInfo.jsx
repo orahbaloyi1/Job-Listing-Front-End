@@ -11,7 +11,7 @@ const UserInfo = () => {
 
     const formData = new FormData(form);
 
-    fetch(`/submit_checkout`, {
+    fetch(`/submit_job`, {
       method: "POST",
       body: formData,
     })
@@ -47,7 +47,6 @@ const UserInfo = () => {
                 name="fullname"
                 id="fullname"
                 placeholder="Enter Full Name"
-                // onChange={(e) => (e.target.value)}
                 className="border-100 rounded-xl p-2 bg-gray-100 w-full"
                 required
               />
@@ -61,7 +60,6 @@ const UserInfo = () => {
                 name="emailaddress"
                 id="emailaddress"
                 placeholder="Enter your email"
-                // onChange={(e) => setCompany(e.target.value)}
                 className="border-100 rounded-xl p-2 bg-gray-100 w-full"
                 required
               />
