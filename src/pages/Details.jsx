@@ -4,7 +4,7 @@ import MainLayout from "../layouts/MainLayouts";
 const Details = () => {
   return (
     <MainLayout>
-      <h1>MoreDetails </h1>
+      <MoreDetails />
     </MainLayout>
   );
 };

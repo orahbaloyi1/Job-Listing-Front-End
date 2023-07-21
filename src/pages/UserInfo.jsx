@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import MainLayouts from "../layouts/MainLayouts";
 
 const UserInfo = () => {
