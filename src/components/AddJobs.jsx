@@ -32,8 +32,6 @@ const AddJob = () => {
           ? {
               id: editId,
               jobtitle,
-              //fullname,
-              // emailaddress,
               company,
               about,
               description,
@@ -53,8 +51,6 @@ const AddJob = () => {
         {
           id: Date.now(),
           jobtitle,
-          //fullname,
-          // emailaddress,
           company,
           about,
           description,
@@ -81,7 +77,7 @@ const AddJob = () => {
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch(`http://127.0.0.1:5000/submit_job`, {
+    fetch(`${import.meta.env.VITE_API_URL}/submit_job`, {
       method: "POST",
       body: formData,
     })

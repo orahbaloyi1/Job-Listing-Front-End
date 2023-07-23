@@ -5,12 +5,12 @@ const FeaturedJobs = () => {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/get_job`)
+    fetch(`${import.meta.env.VITE_API_URL}/get_job`)
       .then((resp) => resp.json())
       .then((resp) => {
         setJobs(resp.jobs);
       });
-  });
+  }, []);
 
   // const featuredJobs = jobs.slice(0, 10);
   return (

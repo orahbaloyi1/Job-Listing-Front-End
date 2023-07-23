@@ -8,7 +8,7 @@ const MoreDetails = () => {
   let [jobInfo, setJobInfo] = useState();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/get_job/${jobSlug}`)
+    fetch(`${import.meta.env.VITE_API_URL}/get_job/${jobSlug}`)
       .then((resp) => resp.json())
       .then((resp) => {
         setJobInfo(resp);
