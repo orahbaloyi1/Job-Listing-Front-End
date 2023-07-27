@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="py-8 mt-5 bg-purple-900">
+    <div className="py-8 bg-purple-900">
       <div className="container mx-auto">
         <h3 className="text-center text-white text-3xl font-bold">
           Get a weekly email with the latest jobs.
@@ -19,11 +19,6 @@ const Footer = () => {
         </div>
         <div className="mt-10">
           <ul className="gap-x-8 text-white">
-            <li>
-              <Link to="/AboutUs" className="hover:underline cursor-pointer">
-                About Us
-              </Link>
-            </li>
             <li>
               <Link to="/AllJobs" className="hover:underline cursor-pointer">
                 Jobs

@@ -1,12 +1,12 @@
 const HeroSec = () => {
   return (
-    <section className="bg-hero-sec bg-cover bg-center ">
+    <section className="bg-hero-sec bg-cover bg-center h-screen ">
       <div className=" ">
-        <div className="container mx-auto text-center py-28 ">
+        <div className="container mx-auto text-center">
           <h1 className="font-bold text-5xl text-white leading-tight">
             Land your dream <br /> job now!
           </h1>
-          <div className="mt-12">
+          <div className="">
             <input
               type="text"
               placeholder="Search for job"
