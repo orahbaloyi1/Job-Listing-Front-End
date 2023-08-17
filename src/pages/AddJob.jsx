@@ -104,10 +104,10 @@ const AddJob = () => {
       <section className="py-20 ">
         <div className="container mx-auto">
           <form className="border rounded-xl py-4 px-3" onSubmit={addJobForm}>
-            <h1 className="font-bold text-3xl text-center mt-6 mb-6 text-m-purple">
+            <h1 className="font-bold text-5xl text-center mt-6 mb-6 text-m-purple">
               Job Details
             </h1>
-            <div className="text-lg mt-10 px-6">
+            <div className="text-2xl mt-10 px-6">
               <label htmlFor="slug" className="font-bold mr-4">
                 Full Name
               </label>
@@ -120,7 +120,7 @@ const AddJob = () => {
                 className="border-100 rounded-xl p-2 bg-gray-100 block w-full "
               />
             </div>
-            <div className="text-lg mt-10 px-6">
+            <div className="text-2xl mt-10 px-6">
               <label htmlFor="jobtitle" className="font-bold mr-4">
                 Job Title
               </label>
@@ -134,7 +134,7 @@ const AddJob = () => {
               />
             </div>
 
-            <div className="text-lg mt-10 px-6">
+            <div className="text-2xl mt-10 px-6">
               <label htmlFor="company" className="font-bold">
                 Company
               </label>
@@ -147,7 +147,7 @@ const AddJob = () => {
                 className="border-100 rounded-xl p-2 bg-gray-100 block w-full "
               />
             </div>
-            <div className="text-lg mt-10 px-6">
+            <div className="text-2xl mt-10 px-6">
               <label htmlFor="about" className="font-bold">
                 About Company
               </label>
@@ -160,7 +160,7 @@ const AddJob = () => {
                 className="border-100 rounded-xl bg-gray-100 block w-full h-40 "
               />
             </div>
-            <div className="text-lg mt-10 px-6">
+            <div className="text-2xl mt-10 px-6">
               <label htmlFor="description" className="font-bold">
                 Job description
               </label>
@@ -173,7 +173,7 @@ const AddJob = () => {
                 className="border-100 rounded-xl bg-gray-100 block w-full h-40"
               />
             </div>
-            <div className="text-lg mt-10 px-6">
+            <div className="text-2xl mt-10 px-6">
               <label htmlFor="requirements" className="font-bold">
                 Requirements
               </label>
@@ -186,7 +186,7 @@ const AddJob = () => {
                 className="border-100 rounded-xl bg-gray-100 block w-full h-40"
               />
             </div>
-            <div className="text-lg mt-10 px-6">
+            <div className="text-2xl mt-10 px-6">
               <label className="font-bold mr-6">Job Type:</label>
               <input
                 type="radio"
@@ -216,7 +216,7 @@ const AddJob = () => {
               />
               Fixed
             </div>
-            <div className="text-lg mt-10 px-6 ">
+            <div className="text-2xl mt-10 px-6 ">
               <label htmlFor="location" className="font-bold">
                 Location
               </label>
@@ -239,7 +239,7 @@ const AddJob = () => {
                 <option value="Mpumalanga">Mpumalanga</option>
               </select>
             </div>
-            <div className="text-lg mt-10 px-6 ">
+            <div className="text-2xl mt-10 px-6 ">
               <label htmlFor="industry" className="font-bold">
                 Industry
               </label>
@@ -264,7 +264,7 @@ const AddJob = () => {
                 <option value="Health Care">Health Care</option>
               </select>
             </div>
-            <div className="text-lg mt-10 px-6 ">
+            <div className="text-2xl mt-10 px-6 ">
               <label htmlFor="salary" className="font-bold">
                 Salary
               </label>
@@ -281,7 +281,7 @@ const AddJob = () => {
             <div className="flex justify-center m-12">
               <button
                 type="submit"
-                className="text-black font-bold text-lg rounded-2xl py-3 px-12  bg-yellow-400 hover:opacity-80 drop-shadow-md "
+                className="text-white font-bold text-2xl rounded-2xl py-3 px-12 bg-fav-purple hover:opacity-80 drop-shadow-md "
               >
                 Save
               </button>

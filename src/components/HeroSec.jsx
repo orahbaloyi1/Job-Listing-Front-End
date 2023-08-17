@@ -1,20 +1,26 @@
+import { Link } from "react-router-dom";
+
 const HeroSec = () => {
   return (
     <section className="bg-hero-sec bg-cover bg-center h-screen ">
-      <div className=" ">
-        <div className="container mx-auto text-center">
-          <h1 className="font-bold text-5xl text-white leading-tight">
-            Land your dream <br /> job now!
-          </h1>
+      <div className="container mx-auto">
+        <div className="flex justify-center items-center h-screen">
           <div className="">
-            <input
-              type="text"
-              placeholder="Search for job"
-              className="border-2 rounded-2xl py-3 px-24 text-xl mr-5 drop"
-            ></input>
-            <button className="rounded-2xl py-3 px-8 bg-yellow-400 hover:opacity-80 text-xl">
-              Search
-            </button>
+            <h1 className="font-bold text-8xl text-white leading-tight">
+              Land your dream <br /> job now!
+            </h1>
+            <div className="mt-10">
+              <Link to="/Alljobs">
+                <button className="rounded-2xl text-white text-xl py-5 mr-4 px-20 bg-fav-purple hover:opacity-80">
+                  Find Job
+                </button>
+              </Link>
+              <Link to="/Addjob">
+                <button className="rounded-2xl text-white fold-bold text-xl py-5 px-20 bg-fav-purple hover:opacity-80">
+                  Add Job
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

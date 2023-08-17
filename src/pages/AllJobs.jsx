@@ -33,7 +33,7 @@ const AllJobs = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             ></input>
-            <button className="rounded-2xl py-3 px-8 bg-yellow-400 hover:opacity-80 text-xl">
+            <button className="rounded-2xl py-3 px-8 bg-fav-purple hover:opacity-90 text-white text-xl">
               Search
             </button>
           </div>
@@ -42,40 +42,43 @@ const AllJobs = () => {
               filteredJobs.map((job) => (
                 <div
                   key={job.id}
-                  className="flex justify-between items-center rounded-xl border py-4 px-6 h-30 mb-3"
+                  className="flex justify-between items-center rounded-xl border py-4 px-6 h-40 mb-3"
                 >
-                  <div>
+                  <div className="">
                     <Link to={`/Details/${job.slug}`}>
-                      <h2 className="text-left font-bold text-2xl hover:underline text-m-purple">
+                      <h2 className="text-left font-bold text-3xl hover:underline text-m-purple">
                         {job.jobtitle}
                       </h2>
                     </Link>
-                    <p className="font-bold text-lg">{job.company}</p>
+                    <p className="font-bold text-xl">{job.company}</p>
                     <div className="flex justify-between gap-10">
                       <div className="flex justify-between gap-1 text-gray-600">
                         <span className="material-symbols-outlined">
                           location_on
                         </span>
-                        <p className="text-lg">{job.location}</p>
+                        <p className="text-xl">{job.location}</p>
                       </div>
                       <div className="flex justify-between gap-1">
                         <span className="material-symbols-outlined align-middle text-gray-500">
                           library_books
                         </span>
-                        <p className="text-lg text-gray-600 ">{job.jobtype}</p>
+                        <p className="text-xl text-gray-600 ">{job.jobtype}</p>
                       </div>
                       <div className="flex justify-between gap-1">
                         <span className="material-symbols-outlined align-middle text-gray-500">
                           factory
                         </span>
-                        <p className="text-lg text-gray-600 ">{job.industry}</p>
+                        <p className="text-xl text-gray-600 ">{job.industry}</p>
                       </div>
                     </div>
                   </div>
-                  <Link to={`/Details/${job.slug}`}>
-                    <button className=" border-2 rounded-2xl py-3 px-6 border-m-purple hover:bg-h-purple text-base">
-                      More details
-                    </button>
+                  <Link
+                    to={`/Details/${job.slug}`}
+                    className="
+                    hover:text-m-purple
+                    text-xl"
+                  >
+                    More details
                   </Link>
                 </div>
               ))

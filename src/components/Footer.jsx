@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="py-8 bg-purple-900">
+    <div className="py-8 bg-fav-purple">
       <div className="container mx-auto">
         <h3 className="text-center text-white text-3xl font-bold">
           Get a weekly email with the latest jobs.
